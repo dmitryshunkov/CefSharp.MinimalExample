@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using CefSharp.WinForms;
+using System.Windows;
 
 namespace CefSharp.MinimalExample.Wpf
 {
@@ -7,6 +8,7 @@ namespace CefSharp.MinimalExample.Wpf
         public MainWindow()
         {
             InitializeComponent();
+            (windowFormsHost.Child as ChromiumWebBrowser).Load("www.google.com");
         }
     }
 }
