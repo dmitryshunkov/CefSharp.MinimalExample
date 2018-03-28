@@ -8,7 +8,9 @@ namespace CefSharp.MinimalExample.Wpf
         public MainWindow()
         {
             InitializeComponent();
-            (windowFormsHost.Child as ChromiumWebBrowser).Load("www.google.com");
+            var chromiumBrowser = (windowFormsHost.Child as ChromiumWebBrowser);
+            chromiumBrowser.FocusHandler = null;
+            chromiumBrowser.Load("www.google.com");
         }
     }
 }
